@@ -1,0 +1,36 @@
+{
+  "name": "planetime",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessie-james/planetime.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jessie-james/planetime/issues"
+  },
+  "homepage": "https://github.com/jessie-james/planetime#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "emailjs-com": "^2.4.1",
+    "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "mongoose": "^5.9.28",
+    "morgan": "^1.10.0",
+    "node-sass": "^4.13.1",
+    "send": "^0.17.1",
+    "stripe": "^8.37.0",
+    "y": "^0.3.2"
+  }
+}
