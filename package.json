@@ -13,15 +13,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jessie-james/planetime.git"
+    "url": "git+https://github.com/V-School-Module-7/obard.git/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jessie-james/planetime/issues"
+    "url": "https://github.com/V-School-Module-7/obard.git/issues"
   },
-  "homepage": "https://github.com/jessie-james/planetime#readme",
+  "homepage": "https://github.com/V-School-Module-7/obard.git#readme",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
