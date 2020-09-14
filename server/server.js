@@ -66,18 +66,18 @@ app
 ;
 
 /* PROTECTED RESOURCE AUTH IS REQUIRED */
-app.all(`${config.api.prefix}/*`, auth.required, (req, res, next) => {
-  res.json('Protected resource!');
-  /* USER SHOULD BE AUTHENTICATED REDIRECT TO LOGIN */
-  res.redirect(301, '/auth/login');
-  next();
-})
+// app.all(`${config.api.prefix}/*`, auth.required, (req, res, next) => {
+//   res.json('Protected resource!');
+//   /* USER SHOULD BE AUTHENTICATED REDIRECT TO LOGIN */
+//   res.redirect('/auth/login');
+//   next();
+// })
 
 /* MAIN ROUTE AUTH IS OPTIONAL */
-app.get('/', auth.optional, (req, res, next) => {
-  res.json('Hello World!');
-  next();
-});
+// app.get('/', auth.optional, (req, res, next) => {
+//   res.json('Hello World!');
+//   next();
+// });
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'build', 'index.html') );

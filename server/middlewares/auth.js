@@ -44,11 +44,12 @@ module.exports = {
       const token = req.header('Authorization').replace('Bearer ', '');
       /* THE JWT 'VERIFY' FUNCTION HELPS TO DECODE THE TOKEN */
       const decoded = jwt.verify(token, config.jwt.secret);
-      const user = await User.findOne({
+      const user = await db.User.findOne({
         _id: decoded._id,
         'tokens.token': token
       });
       console.log("\nJWT verification result: " + JSON.stringify(decoded) );
+      
       req.token = token;
       req.user = user;
       /* IF SUCCESSFUL, PASS IT OFF TO THE NEXT FUNCTION FOR EXECUTION */
