@@ -53,10 +53,12 @@ class Cart extends React.Component {
     }
 
     createBooking = () => {
-        const { startDate, endDate, startTime, endTime} = this.state
+        const { startDate, endDate} = this.state
+        let {startTime, endTime} = this.state
+        console.log("startDate check", startDate)
         if (startDate && endDate && startTime && endTime) {
-            const startTime = startTime.split(":")
-            const endTime = endTime.split(":")
+            startTime = startTime.split(":")
+            endTime = endTime.split(":")
     
             const bookingStart = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate(), startTime[0], startTime[1])
             const bookingEnd = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate(), endTime[0], endTime[1])
@@ -69,7 +71,7 @@ class Cart extends React.Component {
     
             console.log(bookingStart)
             console.log(bookingEnd)
-            // console.log(bookingEnd)
+            console.log(bookingEnd)
             // redirects to the checkout url and adds the start and end times/dates to the booking provider
             
         }
