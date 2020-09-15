@@ -1,5 +1,6 @@
 /* IMPORTS */
 const expressJwt = require('express-jwt');
+const jwt = require('jsonwebtoken');
 const config = require('../config');
 const db = require('../models');
 
@@ -69,7 +70,7 @@ module.exports = {
       const { role } = req.user;
       const user = await db.User.findOne({ role })
       console.log('ADMIN ROLE?');
-      if (role !== 'admin') {
+      if (role != 'admin') {
         return res.sendStatus(403);
       } 
       req.user = user;
@@ -77,7 +78,7 @@ module.exports = {
     } 
     catch (err) {
       console.error(err);
-      res.redirect('/login');
+      res.redirect('/auth/login');
     }
   }
 };

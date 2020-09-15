@@ -28,25 +28,25 @@ app
   .use(bodyParser.urlencoded( { extended: false } ) ) /* FOR PARSING FORM URL ENCODED DATA */
   .use(bodyParser.json() ) /* FOR PARSING APP/JSON DATA */
   .use(upload.array() ) /* FOR PARSING MULTIPART/FORM DATA */
-  .use(express.static(path.join(__dirname, 'client', 'build') )) /* FOR SERVING STATIC FILES */
+  // .use(express.static(path.join(__dirname, 'client', 'build') )) /* FOR SERVING STATIC FILES */
   .use(logger('dev') ) /* LOGGER */
 ;
 
 /* MIDDLEWARE REQUEST TIME LOGGER FOR EVERY REQUEST MADE TO THE SERVER */
-app.use('/booking', (req, res, next) => {
-  console.log('New booking request received at ' + Date.now() );
-  next();
-});
+// app.use('/booking', (req, res, next) => {
+//   console.log('New booking request received at ' + Date.now() );
+//   next();
+// });
 
 /* ROUTE HANDLER THAT SENDS THE RESPONSE */
-app.get('/booking', (req, res) => {
-  res.send('booking');
-});
+// app.get('/booking', (req, res) => {
+//   res.send('booking');
+// });
 
-app.post('/booking', (req, res) => {
-  console.log(req.body);
-  res.send('Recevied your booking request!');
-});
+// app.post('/booking', (req, res, next) => {
+//   console.log(req.body);
+//   res.send('Recevied booking request!')
+// })
 
 if (process.env.NODE_ENV !== 'production') {
   console.log('Development');
@@ -60,7 +60,8 @@ if (process.env.NODE_ENV !== 'production') {
 /* ROUTE HANDLERS */
 app
   .use('/auth', auth.optional, require('./routes/authRouter') )
-  .use('/booking', auth.optional, require('./routes/bookingRouter') )
+  // .use(`${config.api.prefix}/booking`, auth.required, require('./routes/bookingRouter') )
+  .use('/booking', auth.required, require('./routes/bookingRouter') )
   .use('/payment', auth.required, require('./routes/paymentRouter') )
   .use(config.api.prefix, auth.required)
 ;
@@ -70,18 +71,19 @@ app
 //   res.json('Protected resource!');
 //   /* USER SHOULD BE AUTHENTICATED REDIRECT TO LOGIN */
 //   res.redirect('/auth/login');
+//   console.log('BLAH')
 //   next();
 // })
 
 /* MAIN ROUTE AUTH IS OPTIONAL */
-// app.get('/', auth.optional, (req, res, next) => {
-//   res.json('Hello World!');
-//   next();
-// });
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html') );
+app.get('/', auth.optional, (req, res, next) => {
+  res.json('OBARD!!!');
+  next();
 });
+
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'client', 'build', 'index.html') );
+// });
 
 /* ERROR HANDLING MIDDLEWARE */
 app.use( (err, req, res, next) => {

@@ -8,8 +8,8 @@ authRouter
   .post('/signup', userController.signup)
   .post('/login', userController.login)
   .get('/current-user', auth.authenticated, userController.currentUser)
-  .get('/users', auth.authenticated, userController.authorization)
-  .get('/admin/users', auth.checkAdminRole, userController.users)
+  .get('/admin', auth.authenticated, auth.checkAdminRole, userController.authorization)
+  .get('/admin/users', auth.authenticated, auth.checkAdminRole, userController.users)
   .post('/current-user/logout', auth.authenticated, userController.logout)
   .post('/current-user/logout-all', auth.authenticated, userController.logoutAll)
 ;

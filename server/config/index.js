@@ -10,7 +10,7 @@ if (dotEnv.error) {
   throw new Error('.env file not found!');
 };
 
-// MONGODB OPTIONS
+/* MONGODB OPTIONS */
 const options = {
   useCreateIndex: true,
   useFindAndModify: false,
@@ -29,7 +29,7 @@ module.exports = {
     options: options,
   },
   api: {
-    prefix: '/api',
+    prefix: process.env.PREFIX,
   },
   uri: process.env.URI,
   firebase: {
