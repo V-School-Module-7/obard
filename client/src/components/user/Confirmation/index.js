@@ -5,13 +5,13 @@
 import React from 'react'
 
 // component
-const Charged = () => {
+const Confirmation = () => {
     return (
         <div>
-            You have payed tenty dollars to commit to flyin plain thankyuu
+            CONFIRMATION PAGE PLACEHOLDER
         </div>
     )
 }
 
 // exports
-export default Charged
+export default Confirmation

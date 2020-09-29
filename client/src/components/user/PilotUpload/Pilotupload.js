@@ -3,7 +3,7 @@
 
 // imports
 import React, {Component} from 'react';
-import {storage} from '../../../components/user/Home/firebase/Firebase'
+import {storage} from './firebase/Firebase'
 
 // component
 class PilotUpload extends Component {

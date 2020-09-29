@@ -3,7 +3,7 @@
 
 // imports
 import React from 'react'
-import {timeArr} from '../_times'
+import {timeArr} from './_times'
 
 // component
 class StartTimeMenu extends React.Component {

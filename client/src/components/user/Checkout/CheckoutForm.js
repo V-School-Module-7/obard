@@ -75,8 +75,6 @@ const CheckoutForm = props => {
         <input id="state" name="state" type="text" />
         <p>Zip</p>
         <input id="zip" name="zip" type="text" />
-        <p>Pilot Liscence Number</p>
-        <input id="liscenceNumber" name="liscenceNumber" type="text" />
         <CardElement />
         <button onClick={handleSubmit}>Purchase</button>
       </form>

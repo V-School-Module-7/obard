@@ -6,7 +6,7 @@ import React from 'react';
 import StartTimeMenu from "./StartTimeMenu";
 import EndTimeMenu from "./EndTimeMenu";
 import DateSelect from './DateSelect'
-import { withBooking } from "../../../../context/BookingProvider"
+import { withBooking } from "../../../context/BookingProvider"
 import CalendarDate from 'react-calendar'
 import {v4} from 'uuid'
 import axios from 'axios'
@@ -52,8 +52,9 @@ class Cart extends React.Component {
         }
     }
 
-    createBooking = () => {
+    selectDates = () => {
         const { startDate, endDate} = this.state
+        const { toggleDateSelected } = this.props
         let {startTime, endTime} = this.state
         console.log("startDate check", startDate)
         if (startDate && endDate && startTime && endTime) {
@@ -72,9 +73,9 @@ class Cart extends React.Component {
             console.log(bookingStart)
             console.log(bookingEnd)
             console.log(bookingEnd)
-            // redirects to the checkout url and adds the start and end times/dates to the booking provider
             
         }
+        toggleDateSelected();
 
     }
 
@@ -145,7 +146,7 @@ class Cart extends React.Component {
                     </p>
                 </div>
 
-                <button className={"cart__checkout"} onClick={this.createBooking}>Checkout</button>
+                <button className={"cart__checkout"} onClick={this.selectDates}>Continue</button>
 
             </div>
         )

@@ -15,7 +15,8 @@ const Header = () => {
                     O-D
                 </div>
                 <nav className="header__nav">
-                    <Link className="header__nav-link">Home</Link>
+                    <Link className="header__nav-link" to="/" >Home</Link>
+                    <Link className="header__nav-link" to="/profile" >Profile</Link>
                     <Link className="header__nav-link">Signup</Link>
                     <Link className="header__nav-link">Login</Link>
                 </nav>

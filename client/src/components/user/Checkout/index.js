@@ -8,6 +8,7 @@ import CheckoutForm from "./CheckoutForm"
 const CheckoutContainer = () => {
     return (
         <div>
+            CHECKOUT PAGE
             <CheckoutForm />
         </div>
     )
