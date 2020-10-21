@@ -5,30 +5,39 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "client-install": "npm install --prefix client",
+    "start": "node server/server.js",
+    "server": "nodemon server/server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jessie-james/planetime.git"
+    "url": "git+https://github.com/V-School-Module-7/obard.git/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jessie-james/planetime/issues"
+    "url": "https://github.com/V-School-Module-7/obard.git/issues"
   },
-  "homepage": "https://github.com/jessie-james/planetime#readme",
+  "homepage": "https://github.com/V-School-Module-7/obard.git#readme",
   "dependencies": {
     "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "emailjs-com": "^2.4.1",
+    "emailjs-com": "^2.6.3",
     "express": "^4.17.1",
     "express-jwt": "^6.0.0",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.24.0",
     "mongoose": "^5.9.28",
     "morgan": "^1.10.0",
-    "node-sass": "^4.13.1",
+    "multer": "^1.4.2",
+    "node-sass": "^4.14.1",
+    "path": "^0.12.7",
     "send": "^0.17.1",
     "stripe": "^8.37.0",
     "y": "^0.3.2"
