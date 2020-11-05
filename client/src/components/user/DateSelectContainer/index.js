@@ -7,9 +7,9 @@ import StartTimeMenu from "./StartTimeMenu";
 import EndTimeMenu from "./EndTimeMenu";
 import DateSelect from './DateSelect'
 import { withBooking } from "../../../context/BookingProvider"
-import CalendarDate from 'react-calendar'
-import {v4} from 'uuid'
-import axios from 'axios'
+// import CalendarDate from 'react-calendar'
+// import {v4} from 'uuid'
+// import axios from 'axios'
 
 // component
 class Cart extends React.Component {
@@ -53,23 +53,17 @@ class Cart extends React.Component {
     }
 
     selectDates = () => {
-        const { startDate, endDate} = this.state
         const { toggleDateSelected } = this.props
-        let {startTime, endTime} = this.state
-        console.log("startDate check", startDate)
+        let {startTime, endTime, startDate, endDate} = this.state
         if (startDate && endDate && startTime && endTime) {
             startTime = startTime.split(":")
             endTime = endTime.split(":")
-    
             const bookingStart = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate(), startTime[0], startTime[1])
             const bookingEnd = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate(), endTime[0], endTime[1])
             const bookingData = {
                 startDate: bookingStart.toISOString(),
                 endDate: bookingEnd.toISOString()
             }
-            axios.post(`http://localhost:3000/booking`, bookingData)
-    
-    
             console.log(bookingStart)
             console.log(bookingEnd)
             console.log(bookingEnd)
@@ -111,7 +105,6 @@ class Cart extends React.Component {
         return (
             <div
                 className={`cart ${this.state.browserWidth < 767 && !this.props.mobileCartEnabled ? "cart--closed" : null}`}>
-
                 <h1 className="cart__price">$175 per hour</h1>
                 <label htmlFor="" className="cart__label">From:</label>
                 <div className="cart__date-time-container">
@@ -142,12 +135,9 @@ class Cart extends React.Component {
                         Estimated Total (due upon return)
                     </p>
                     <p className="cart__estimated-total-price">
-
                     </p>
                 </div>
-
                 <button className={"cart__checkout"} onClick={this.selectDates}>Continue</button>
-
             </div>
         )
     }

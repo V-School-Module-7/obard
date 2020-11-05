@@ -1,11 +1,11 @@
 // BookingProvider.js
 // ==============================
 
-// manages "stage" of transactions
-// adds data to objects needed to send to 
+// manages data to be processed with booking
+// 
 
 // imports
-import React, { Component } from "react";
+import React, { useState, Component } from "react";
 import axios from 'axios'
 import { withRouter } from "react-router-dom";
 
@@ -13,6 +13,12 @@ import { withRouter } from "react-router-dom";
 export const BookingContext = React.createContext();
 
 // component
+const BookingProvider = () => {
+  const [date, setDate] = 
+}
+
+
+
 class BookingProvider extends Component {
   
 
@@ -81,40 +87,6 @@ class BookingProvider extends Component {
     
   }
  
-  // postBooking = data => {
-  //   let { startTime,
-  //         endTime,
-  //         startDate,
-  //         endDate,
-  //         firstName, 
-  //         lastName,
-  //         email,
-  //         bookingAddressLine1,
-  //         bookingAddressLine2,
-  //         city,
-  //         state,
-  //         zip,
-  //         pilotLiscenceNumber
-  //   } = this.state
-  //   let data = {
-  //         startTime,
-  //         endTime,
-  //         startDate,
-  //         endDate,
-  //         firstName, 
-  //         lastName,
-  //         email,
-  //         bookingAddressLine1,
-  //         bookingAddressLine2,
-  //         city,
-  //         state,
-  //         zip,
-  //         pilotLiscenceNumber
-  //   }
-  //   axios.post("./booking", data)
-  //     .then()
-  //     .catch()
-  // }
 
   handleChange = e => {
     const { name, value } = e.target;
