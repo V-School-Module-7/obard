@@ -18,7 +18,7 @@ import Profile from "./components/user/Profile"
 
 import Confirmation from "./components/user/Confirmation"
 
-import { withUser } from "./context/UserProvider.js";
+import { withUser } from "./components/context/OldUserProvider.js";
 import { StripeProvider, Elements } from 'react-stripe-elements'
 
 // component

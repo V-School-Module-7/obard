@@ -4,7 +4,7 @@
 // imoprts
 import React, { Component } from "react";
 import AuthForm from "./AuthForm";
-import { withUser } from "./context/UserProvider.js";
+import { withUser } from "./components/context/OldUserProvider.js";
 // import SignUpForm from "./SignUpForm";
 
 // component  

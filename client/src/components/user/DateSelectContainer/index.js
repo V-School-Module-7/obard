@@ -6,7 +6,7 @@ import React from 'react';
 import StartTimeMenu from "./StartTimeMenu";
 import EndTimeMenu from "./EndTimeMenu";
 import DateSelect from './DateSelect'
-import { withBooking } from "../../../context/BookingProvider"
+import { withBooking } from "../../context/BookingProvider"
 // import CalendarDate from 'react-calendar'
 // import {v4} from 'uuid'
 // import axios from 'axios'
