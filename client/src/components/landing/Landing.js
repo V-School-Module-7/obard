@@ -11,13 +11,22 @@ export default class Landing extends Component {
         }
     }
     
+    account = () =>{
+        return(this.setState({
+                account: !this.account
+             })
+        ) 
+    }
+    
     render() {
+        console.log(this.state.account)
         return(
             <div>
                 <div>
                     <div></div>
                     <div>
                         {this.state.account = true ? Login : SignUp}
+                        <button onClick={this.account}></button>
                     </div>
                 </div>
             </div>
