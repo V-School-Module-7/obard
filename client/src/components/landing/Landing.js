@@ -5,7 +5,14 @@ export default function Landing(){
         <div>
             <div>
                 <div></div>
-                <div></div>
+                <div>
+                    <form action="">
+                        <input type="text"/>
+                        <input type="text"/>
+                        <input type="text"/>
+                        <input type="text"/>
+                    </form>
+                </div>
             </div>
         </div>
     )
