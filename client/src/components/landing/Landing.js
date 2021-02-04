@@ -28,7 +28,7 @@ export default class Landing extends Component {
                     <div></div>
                     <div>
                         {this.state.account === true ? <Login/> :<SignUp/>}
-                         <button onClick={this.accountChange}><h1>{this.state.account === true ? 'Dont have an account? Sign up!' : 'Return to Login'}</h1></button>
+                         <button onClick={this.accountChange}>{this.state.account === true ? 'Dont have an account? Sign up!' : 'Return to Login'}</button>
                     </div>
                 </div>
             </div>
