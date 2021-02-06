@@ -1,0 +1,91 @@
+body{
+    margin: 0;
+}
+
+.landing-background{
+    height: 100vh;
+    background-image: url("./cssAssets/Piper.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    margin: 0px;
+}
+.landing-filter-background{
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    margin: 0px;
+    display: flex;
+}
+
+
+.landing-container-div{ 
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 4fr 1fr 4fr;
+    margin: auto;
+}
+.dividing-line{
+    height: 90%;
+    background-color: #ffa8a8;
+    width: 4px;
+    border-radius: 25px;
+    opacity: 50%;
+}
+
+.alternating-form-container {
+    margin: auto;
+    height: 90%;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+}
+
+/* Login Component */
+
+.returning-customers{
+    justify-self: right;
+    color: #ffffff;
+    font-size: 32px;
+    margin-bottom: 0px;
+    letter-spacing: 2px;
+    font-weight: 200;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.login-form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+.login-form > h3{
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 4px;
+    font-weight: 100;
+}
+.login-username-input{
+    height: 48px;
+    width: 20vw;
+    border-radius: 25px;
+    border: none;
+}
+
+.login-password-input{
+    height: 48px;
+    width: 20vw;
+    border-radius: 25px;
+    border: none;
+}
+
+.login-button{
+    background-color: #DE6262;
+    color: whitesmoke;
+    height: 48px;
+    margin-top: 24px;
+    border-radius: 25px;
+    border: none;
+}

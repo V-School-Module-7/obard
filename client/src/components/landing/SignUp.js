@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 export default function SignUp() {
         return (
@@ -8,7 +8,7 @@ export default function SignUp() {
                     <input type="text"/>
                     <input type="text"/>
                     <input type="text"/>
-                    <button></button>
+                    <button>signup</button>
                 </form>
             </div>
         )
